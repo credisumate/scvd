@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SCVD | Ayala</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+ 
+   <style>
+        #slider-container {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #slider {
+            width: 100%;
+
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        button {
+            position: absolute;
+            top: 75%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        #prevBtn {
+            left: 0;
+        }
+
+        #nextBtn {
+            right: 0;
+        }
+    </style>
+
+
+
+
+
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            color: #0494e3;
+        }
+
+        form {
+            margin-top: 10px;
+            width: 100%;
+            margin: auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h1 {
+            width: 100%;
+            color: #4CAF50;
+            padding-bottom: 5px;
+        }
+        label{
+            color: grey;
+        }
+    </style>
+</head>
+<body >
+	
+
+	<header>
+		<ul class="navbar">
+		
+			<li><a href="index.html" class="active">Inicio</a></li>
+		
+			<li><a href="sistemas.html">Sistemas</a></li>
+	
+		</ul>
+
+		<a href="index.html"><img class="logo" src="https://ayala.gob.mx/wp-content/uploads/2022/05/LOGO-NUEVO-AYALA-2022-2024-01-1.png"  alt="AYALA"></a>
+  
+		<ul class="navbar_izq">
+		
+			<li><center><a href="contactos_emergencia.html">Contactos de emergencia</a></center></li>
+			<li><center><a href="chat_asistente.html" >Chat Asistente</a></center></li>
+		</ul>
+
+		<!--<div class="main">
+			<a href="#" class="user">Contactos de emergencia</a>
+			<a href="#">Chat</a>-->
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+<div class="container">
+<div class="contenedor">
+<br><br><br><br><br>
+<form action="#" method="post">
+        <label >Acontecimiento</label>
+        <input type="text" id="titulo" name="titulo" required><br>
+
+        <label for="publicacion">Publicación</label>
+        <textarea id="publicacion" name="publicacion" required></textarea>
+
+        <label for="encuesta">Encuesta (opcional)</label>
+        <textarea id="encuesta" name="encuesta"></textarea>
+
+        <input type="submit" value="Publicar">
+    </form> 
+<br>
+<center><h1>Alertas Recientes</h1></center>
+ <div id="slider-container">
+        <div id="slider">
+            <div class="slide"><center><img height="900" width="600"src="img/semefo.jpg" alt="Imagen 1"></center><label>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</label></div>
+            
+            <div class="slide"><center><img height="900" width="600" src="img/mari.jpg" alt="Imagen 2"></center><label>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</label></div>
+            <div class="slide"><center><img height="900" width="600" src="img/depo.jpg" alt="Imagen 3"></center><label>sssssssssssssssssssssssssssssssssssssssssssssssssss</label></div>
+            <!-- Agrega más imágenes según sea necesario -->
+
+        </div>
+        <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+        <button id="nextBtn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+
+        function showSlides() {
+            var slides = document.getElementById('slider');
+            if (slideIndex > slides.children.length) {
+                slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.children.length;
+            }
+            slides.style.transform = 'translateX(' + (-100 * (slideIndex - 1)) + '%)';
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlides();
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlides();
+        }
+
+        setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos (ajustable según tus necesidades)
+    </script>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+	<!--js link--->
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html><

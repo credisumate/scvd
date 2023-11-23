@@ -1,0 +1,474 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+:root{
+	--bg-color: #222327;
+	--text-color: #274668;
+	--main-color: #29fd53;
+	
+}
+body{
+	min-height: 100vh;
+	background: grey;
+	color: var(--text-color);
+}
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #ffff;
+	transition: all .20s ease;
+}
+.logo{
+	padding: 10px;
+	width: 325px;
+	height: auto;
+}
+.navbar{
+	padding: 0% 4%;
+	display: flex;
+}
+.navbar a{
+	color: var(--text-color);
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0px 15px;
+	transition: all .50s ease;
+}
+.navbar a:hover{
+	transition: all .20s ease;
+	color: #0494e3;
+	
+}
+.navbar a.active{
+	color: #0494e3;
+}
+.main{
+	display: flex;
+	align-items: center;
+}
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+  margin-top: 50px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.user{
+	display: flex;
+	align-items: center;
+}
+.user i{
+	color: #0494e3;
+	font-size: 28px;
+	margin-right: 7px;
+}
+.main a:hover{
+	color: #0494e3;
+}
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 5px 0;
+		margin: 0px 20px;
+	}
+}
+
+@media (max-width: 1090px){
+	#menu-icon{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -150%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+		padding: 0% 4%;
+	
+	}
+	.navbar a{
+		display: block;
+		margin: 12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+	}
+	.navbar a:hover{
+		color: var(--text-color);
+		transform: translateY(5px);
+	}
+	.navbar a.active{
+		color: var(--text-color);
+	}
+	.navbar.open{
+		right: 2%;
+	}
+}
+
+
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+}
+                         /*Barra de navegacion*/
+a, li{
+
+	font-family: sans-serif;
+	color: white;
+
+}
+header{
+background-color: white;
+align-items: center;
+padding: 20px;
+}
+.nav-menu{
+	display: flex; 
+	justify-content: right;
+	align-items: right;
+}
+.nav-menu ul{
+	display: flex;
+	align-items: right;
+}/*
+.nav-menu li:last-child{
+	margin-right: 4.5px;
+}*/
+.nav-menu li{
+	margin-right: 1.5rem;
+}
+.nav-menu li:last-child{
+	margin-right: 5px;
+}
+.nav-menu a:hover{
+	color: #01afd6;
+	font-size: 17px;
+	transition: .3s;
+}/*
+.nav-menu li:first-child{
+	background-color: #01afd6 ;
+	border: 2px solid #01afd6;
+	padding: .25rem .75rem;
+	border-radius: .2rem;
+
+}*/
+ .menu-icon img{
+ 	 width: 25px;
+ }
+ .menu-icon, #check{
+ 	align-items: center;
+ 	display: none;
+ }
+                 /*Panel frontal*/
+ .container{
+	display: flex;
+
+}
+ .css-textoizquierda{
+	font-size: 30px;
+	width: 600px;
+	padding: 100px;
+	/*border: 2px solid white;*/
+	margin-top: 80px;
+	font-family: 'calibri';
+	color: white;
+
+}
+.css-textoizquierda h2{
+font-size: 50px;
+}
+.contenedor {
+	border-radius: 50px;
+	width: 1000px;
+	background: white;
+	align-content: right;
+	padding: 30px;
+	margin: auto;
+	position: absolute;
+	margin-top: 150px;
+	font-family: 'calibri';
+	color: white;
+	position: relative;
+	margin-bottom: 20px;
+} 
+.contenedor h4{
+	color: black;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.controls{
+	width: 100%;
+	background: #F6F6F4;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 16px;
+	border: none;
+	font-family: 'calibri';
+	font-size: 18px;
+	color: black;
+}
+.contenedor p{ 
+	color: black;
+	height: 40px; 
+	
+	font-size: 18px;  
+	line-height: 40px;
+}
+
+.contenedor a{
+	color: black;
+	text-decoration: none;
+
+}
+.contenedor a:hover{
+	color: black;
+	text-decoration: underline;
+	
+}
+.contenedor .boton{
+	border-radius: 10px;
+	width: 100%;
+	background: black;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	font-size: ;
+	cursor: pointer;
+}
+
+                              	/*Cuando esta chiquitin*/
+@media(max-width:868px){
+	.checkbtn{
+		display: block;
+	}
+ .container{
+	display: flex;
+	flex-direction: column;
+}
+ .css-textoizquierda{
+	font-size: 25px;
+	width: 380px;
+	padding: 40px;
+	left: 50px;
+	margin-top: 10px;
+	
+	font-family: 'calibri';
+	color: white;
+
+}
+.css-textoizquierda h2{
+font-size: 30px;
+}
+.contenedor {
+
+	width: 100%;
+	background: white;
+	align-content: right;
+	padding: 30px;
+
+	position: absolute;
+	margin-top: 0px;
+	font-family: 'calibri';
+	color: white;
+	position: relative;
+} 
+.nav-menu li:{
+	margin-right: 10px;
+}
+	.menu-icon{
+
+		display: block;
+		position: 5px 10px 10px 10px;
+		background:  #01afd6;
+		border: 10px solid  #01afd6 ;
+		border-radius: 100%;
+	
+	}
+	.nav-menu ul{
+		display: block;
+		position: fixed;
+		top: 85px;
+		left: -100%;
+		background: white;
+		width: 100%;
+		height: 100%;
+		right: 10;
+	}
+	.nav-menu ul li{
+		align-items: center;
+		padding: 20px;
+		display: flex;
+		justify-content: left;
+		margin: 0;
+	}
+	#check:checked ~ ul{
+		left: 0;
+}
+
+/*chat en linea*/
+.card {
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.card {
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}

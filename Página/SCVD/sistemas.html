@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jaax</title>
+    <link rel="stylesheet" type="text/css" href="css1/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            color: #0494e3;
+            width: 33.33%;
+            float: left;
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+
+
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: center;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: white;
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(60%);
+}
+
+.button::before {
+  position: absolute;
+  top: -20px;
+  content: "Alerta";
+  color: darkred;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(70px);
+  transition-duration: .3s;
+}
+
+
+
+
+
+.card {
+  width: 260px;
+height: 330px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+    </style>
+
+<style>
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <ul class="navbar">
+            
+            <li><a href="index.html" class="active">Inicio</a></li>
+       
+            <li><a href="alertas_ayala.html">Alertas</a></li>
+        </ul>
+
+        <a href="index.html"><img class="logo" src="https://ayala.gob.mx/wp-content/uploads/2022/05/LOGO-NUEVO-AYALA-2022-2024-01-1.png"  alt="AYALA"></a>
+
+        <ul class="navbar">
+            <li><a href="contactos_emergencia.html" >Contactos de Emergencia</a></li>
+            <li><a href="chat_asistente.html"></a>Chat Asistente</li>
+            
+        </ul>
+
+        <!--<div class="main">
+            <a href="#" class="user">Contactos de emergencia</a>
+            <a href="#">Chat</a>-->
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+    </header>-
+
+<div class="container">
+<div class="contenedor"> 
+            
+<section>
+        <h2>Captura de imagen con metadatos</h2>
+        <img src="img/acoso.jpg" alt="Imagen 1">
+        <p>¿Que hacer en caso de?</p>
+        <p>Usa nuestra captura de imagen y metadatos que envian:<br>
+            °Hora                    
+            °Fecha de captura<br>
+            °Ubicacion en tiempo real
+            °Direccion IP
+
+        </p>
+<br><br><br><br><br><br>
+    <video id="camara" autoplay></video>
+    <button id="capturarBtn">Capturar Foto</button>
+
+    <script>
+        // Obtener acceso a la cámara
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                var video = document.getElementById('camara');
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error al acceder a la cámara: ', error);
+            });
+
+        // Capturar foto
+        document.getElementById('capturarBtn').addEventListener('click', function () {
+            var video = document.getElementById('camara');
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            // Ajustar el tamaño del lienzo al tamaño del video
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // Dibujar el video en el lienzo
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Obtener la ubicación
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var latitud = position.coords.latitude;
+                var longitud = position.coords.longitude;
+
+                // Obtener la dirección IP (mediante un servicio externo)
+                fetch('https://api64.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(data => {
+                        var direccionIP = data.ip;
+
+                        // Abrir una nueva ventana con la foto, ubicación y dirección IP
+                        var nuevaVentana = window.open('', '_blank');
+                        nuevaVentana.document.write('<img src="' + canvas.toDataURL('image/png') + '" alt="Captura de la cámara">');
+                        nuevaVentana.document.write('<p>Fecha de captura: ' + new Date().toLocaleString() + '</p>');
+                        nuevaVentana.document.write('<p>Ubicación: Latitud ' + latitud + ', Longitud ' + longitud + '</p>');
+                        nuevaVentana.document.write('<p>Dirección IP: ' + direccionIP + '</p>');
+                    })
+                    .catch(error => console.error('Error al obtener la dirección IP: ', error));
+            });
+        });
+    </script>
+    </section>
+
+    <section>
+        <h2>Boton de Panico</h2>
+        <img  src="img/unidades.jpg" alt="Imagen 2">
+        <p>Toca Nuestro Boton de Panico: Presiona y te dezplazara si deseas alertar a nuestras unidades </p><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <center> <button class="button"> <img src="img/alerta.jpg">
+  <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+</button></center>
+    </section>
+
+    <section>
+        <h2>Chat Online</h2>
+        <img src="img/camaras.jpg" alt="Imagen 3">
+        <p>Implementamos un sistema que permite a los residentes y al personal de seguridad monitorear en tiempo real las camaras de seguridad y la actividad en la comunidad(inlcuye: mensajes de texto notificaciones o comunicacion por voz)</p><br><br><br><br><br><br><br><br><br><br> <br><br><br><br>
+        
+      <div class="card">
+    <div class="chat-header">Chat Online</div>
+      <div class="chat-window">
+        <ul class="message-list"></ul>
+      </div>
+      <div class="chat-input">
+          <input type="text" class="message-input" placeholder="Ingresa un mensaje o audio">
+          <button class="send-button">Send</button>
+      </div>
+    </div>
+    </section>
+
+   
+
+</div>
+</div>
+
+    <!--js link--->
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
